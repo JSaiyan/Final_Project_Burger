@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Order Summary</h1>
+    <form action="/" method="get">
+        </form>
+       <% if( orders.length === 0){ %>
+        
+        <p>no orders stored</p>
+        <% } else { %>
+       
+        <ul>
+            <% for (let i = 0; i < orders.length; i++) { %>
+                <li>id<%= orders[i].id %></li>
+                <li>classic<%= orders[i].ClassicBurgerQuantity %></li>
+                <li>cheese<%= orders[i].CheeseBurgerQuantity %></li>
+                <li>chicken<%= orders[i].ChickenBurgerQuantity %></li>
+                <li>fname<%= orders[i].fname %></li>
+                <li>lname<%= orders[i].lname %></li>
+                <li>phoneNumber<%= orders[i].phoneNumber %></li>
+                <li>email<%= orders[i].email %></li>
+                <li>streetAdd1<%= orders[i].streetAddress %></li>
+                <li>StreetAdd2<%= orders[i].streetAddressLine2 %></li>
+                <li>city<%= orders[i].city %></li>
+                <li>stateProvince<%= orders[i].stateProvince %></li>
+                <li>postalZip<%= orders[i].postalZipCode %></li>
+                <li>payment<%= orders[i].payment %></li>
+                <hr>
+            <% } %> 
+            </ul>
+            <% } %> 
+    
+</body>
+</html>

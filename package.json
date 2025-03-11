@@ -1,5 +1,5 @@
 {
-  "name": "project",
+  "name": "final_project_burger",
   "version": "1.0.0",
   "main": "app.js",
   "type": "module",
@@ -11,7 +11,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mariadb": "^3.4.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

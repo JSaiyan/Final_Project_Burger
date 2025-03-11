@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>✅ Order Confirmed!</h1>
+      <p>
+        Thank you for your order! Your delicious burgers are being prepared and
+        will be delivered soon. 🍔
+
+        <h2>Order Details</h2>
+        <p>Name: <%= newOrder.fname %> <%= newOrder.lname %></p>
+        <p>ClassicBurgerQuantity: <%= newOrder.ClassicBurgerQuantity %></p>
+        <p>CheeseBurgerQuantity: <%= newOrder.CheeseBurgerQuantity %></p>
+        <p>ChickenBurgerQuantity: <%= newOrder.ChickenBurgerQuantity %></p>
+        <p>phoneNumber: <%= newOrder.phoneNumber %> </p>
+        <p>email: <%= newOrder.email %> </p>
+        <p>streetAddress: <%= newOrder.streetAddress %> </p>
+        <p>streetAddressLine2: <%= newOrder.streetAddressLine2 %> </p>
+        <p>city: <%= newOrder.city %> </p>
+        <p>stateProvince: <%= newOrder.stateProvince %> </p>
+        <p>postalZipCode: <%= newOrder.postalZipCode %> </p>
+        <p>payment: <%= newOrder.payment%> </p>
+      
+
+      </p>
+    </div>
+  </body>
+</html>
