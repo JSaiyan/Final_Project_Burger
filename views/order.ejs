@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Burger Order Form</title>
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script src="script/clientValidation.js" defer></script>
+
   </head>
   <body>
     <div class="container">
@@ -13,7 +16,7 @@
       <form id="orderForm" form action="/confirmation" method="post">
         <div class="product">
          
-          <label for="cheeseCheckbox"> Select Cheese Burger</label>
+          <label for="cheeseCheckbox"> Select Classic Burger</label>
           <img
             src="/images/Classic-burger.jpg"
             alt="Classic Burger"
@@ -22,7 +25,7 @@
           />
           <div class="details">
             <h3>Classic Burger</h3>
-            <p>5 Single Entrees - <strong>$4.50</strong></p>
+            <p>Single Entrees - <strong>$5.99</strong></p>
             <label>Quantity:</label>
             <input id ='ClassicBurgerQuantity' name ='ClassicBurgerQuantity'
               type="number"
@@ -31,6 +34,7 @@
               min="0"
               value="0"
             />
+            <span class="err" id="err-classicBurger">Quantity required</span>
 
           </div>
         </div>
@@ -46,7 +50,7 @@
           />
           <div class="details">
             <h3>Cheese Burger</h3>
-            <p>5 Double Entrees - <strong>$5.99</strong></p>
+            <p>Double Entrees - <strong>$6.49</strong></p>
             <label>Quantity:</label>
             <input id ='CheeseBurgerQuantity' name ='CheeseBurgerQuantity'
               type="number" 
@@ -55,6 +59,7 @@
               min="0"
               value="0"
             />
+            <span class="err" id="err-cheeseBurger">Quantity required</span>
 
            
           </div>
@@ -62,7 +67,7 @@
 
         <div class="product">
           
-          <label for="cheeseCheckbox"> Select Cheese Burger</label>
+          <label for="cheeseCheckbox"> Select Chicken Burger</label>
           <img
             src="/images/chicken-burger].jpg"
             alt="Chicken Burger"
@@ -71,7 +76,7 @@
           />
           <div class="details">
             <h3>Chicken Burger</h3>
-            <p>5 Chilled Entrees - <strong>$4.99</strong></p>
+            <p>Chilled Entrees - <strong>$5.99</strong></p>
             <label>Quantity:</label>
             <input id ='ChickenBurgerQuantity' name ='ChickenBurgerQuantity'
               type="number"
@@ -80,7 +85,7 @@
               min="0"
               value="0"
             />
-
+            <span class="err" id="err-chickenBurger">Quantity required</span>
             
           </div>
         </div>
@@ -89,36 +94,50 @@
         <h2 class="details">Delivery Details</h2>
         <div class="input-group">
           <label>First Name</label>
-          <input type="text" id = 'fname' name = 'fname' placeholder="First Name" required />
+          <input type="text" id = 'fname' name = 'fname' placeholder="First Name"/>
+          <span class="err" id="err-fName">First Name required</span>
           <label>Last Name</label>
-          <input type="text" id = 'lname' name = 'lname' placeholder="Last Name" required />
+          <input type="text" id = 'lname' name = 'lname' placeholder="Last Name"/>
+          <span class="err" id="err-lName">Last Name required</span>
         </div>
+      
 
         <div class="input-group">
           <label>Phone Number</label>
           <input type="tel" id ='phoneNumber' name ='phoneNumber' placeholder="(000) 000-0000" required />
+          <span class="err" id="err-Phone">Phone Number required</span>
         </div>
 
         <div class="input-group">
           <label>E-mail</label>
           <input type="email" id = 'email' name = 'email' placeholder="example@example.com" />
+          <span class="err" id="err-Email">Email required</span>
         </div>
 
         <div class="input-group">
           <label>Address</label>
           <input type="text" id = 'streetAddress' name = 'streetAddress' placeholder="Street Address" required />
+          <span class="err" id="err-Address">Address required</span>
+
           <input type="text" id = 'streetAddressLine2' name = 'streetAddressLine2' placeholder="Street Address Line 2" />
+          <span class="err" id="err-Address2">Address2 required</span>
+
           <input type="text" id = 'city' name = 'city' placeholder="City" />
+          <span class="err" id="err-city">city required</span>
+
           <input type="text" id = 'stateProvince' name = 'stateProvince' placeholder="State / Province" />
+          <span class="err" id="err-state">state required</span>
+
           <input type="text" id = 'postalZipCode' name = 'postalZipCode' placeholder="Postal / Zip Code" />
+          <span class="err" id="err-postalZip">Zip required</span>
         </div>
 
         <h2>Payment Methods</h2>
         <div class="payment">
           <label
-            ><input type="radio" id = 'payment' name="payment" checked /> Credit Card</label
-          >
-          <label><input type="radio" id = 'payment' name="payment" /> PayPal</label>
+            ><input type="radio" id = 'payment' name="payment" checked value="Credit Card" /> Credit Card</label>
+
+          <label><input type="radio" id = 'payment' name="payment" value="Credit Card" /> PayPal</label>
         </div>
 
         <button type="submit">Submit Order</button>

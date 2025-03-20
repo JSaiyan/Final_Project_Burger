@@ -105,6 +105,7 @@ const result = validateForm(newOrder);
 
     const conn = await connect();
 
+    //preventing sql injection
     const insertQuery = await conn.query(`INSERT INTO
 orders(
 	ClassicBurgerQuantity,
@@ -121,7 +122,8 @@ orders(
     postalZipCode,
     payment
 )
-    values(?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+    values(?,?,?,?,?,?,?,?,?,?,?,?,?)`, 
+
 [ newOrder.ClassicBurgerQuantity,
     newOrder.CheeseBurgerQuantity, 
     newOrder.ChickenBurgerQuantity,

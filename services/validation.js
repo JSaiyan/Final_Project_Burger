@@ -32,6 +32,12 @@ export function validateForm(data)
     if (isNaN(data.postalZipCode) || data.postalZipCode.trim() === "") {
       errors.push("postalZipCode digits");
     }
+
+          // Validate classicburger
+          if (isNaN(data.phoneNumber) || data.phoneNumber.trim() === "") {
+            errors.push("Phone Number digits");
+        }
+
        // Validate payment
        if (!data.payment) {
         errors.push("payment is required");
